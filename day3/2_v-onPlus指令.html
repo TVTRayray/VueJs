@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <div id="app">
+    <h2>傻逼模拟器，下面可以预测你的名字和生日</h2>
+    <h2 >
+      输入你的名字
+      <input type="text" name ="test" id="" @keyup.enter="doit1('test')" >
+      <input type="text" name ="name" id="" @keyup.enter="doit1(name)" >
+      <input type="button" value="开始预测" @click="doit1(username)"  >
+    </h2>
+    
+    
+  </div>
+  
+  <script >
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello world'
+      },
+      methods:{
+        doit1:function(name){
+          
+          alert("你叫"+name);
+        },
+        doit2:function(birthday){
+          alert("你的生日我猜是："+birthday);
+        }
+      }
+
+    })
+  </script>
+  
+</body>
+</html>

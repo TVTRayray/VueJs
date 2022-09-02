@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  
+  <!-- el只会命中id选中元素内部所有的对应data元素 -->
+  {{message}}
+  <div id="app">
+    {{ message }}
+    <span>{{message}}</span>
+  </div>
+  
+
+
+<!-- 
+  el挂载id： '#app' （div id="app"）
+  el挂载class： '.App' （div class="App"）
+-->
+<div class="App">
+  {{ message }}
+  <span>{{message}}</span>
+</div>
+
+
+<!-- 
+  el还可以挂载标签，但是任然最推荐挂载id
+  el只能挂载双标签，不能挂载单标签
+ -->
+ <div id="APP">
+  {{ message }}
+  <h2>{{message}}</h2>
+ </div>
+
+
+  <script >
+    var app = new Vue({
+      // el:'#app',
+      // el:'.App',
+      el:'div',
+      data: {
+        message: 'Hello world'
+      }
+    })
+  </script>
+
+</body>
+</html>

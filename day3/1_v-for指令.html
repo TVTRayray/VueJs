@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <div id="app">
+  <button @click="add">添加数据</button>
+  <button @click="remove">移除数据</button>
+    <ul>
+      <li v-for="(item) in numberArr" :title="item">
+        {{"item:"+item}}
+      </li>
+      <li v-for="(item,index) in stringArr" :title="item">
+        {{"index:"+index}} <br> {{"item:"+item}}
+      </li>
+      <li v-for="item in objArr" :title="item.name">
+        <h2>
+          {{item.name}} 
+        </h2>
+        
+      </li>
+    </ul>
+  </div>
+  
+  <script >
+    var app = new Vue({
+      el: '#app',
+      data: {
+        numberArr:[4,5,6,7],
+        stringArr:["一","二","三","四"],
+        objArr:[
+          {name:"jack"},
+          {name:"rose"}
+        ],
+      },
+      methods:{
+        add:function() {
+          this.objArr.push({name:"java"});
+        },
+        remove:function(){
+          this.objArr.shift();
+        }
+      }
+    })
+  </script>
+  
+</body>
+</html>

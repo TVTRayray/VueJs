@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <div id="app">
+    <input type="button" value="v-on指令" v-on:click="doIt">
+    <input type="button" value="v-on简写" @click="doIt">
+    <input type="button" value="双击" v-on:dblclick="DbDoIt">
+    <input type="button" value="can can need" @monseenter="seeIt">
+    <h2 @click="foodchange">
+      {{food}}
+    </h2>
+  </div>
+  
+  
+  <script >
+    var app = new Vue({
+      el: '#app',
+      data:{
+        food: "番茄炒蛋拳！",
+      },
+      methods:{
+        doIt:function( ){
+          alert("success");
+        },
+        seeIt:function(){
+          console.log("see 了")
+        },
+        DbDoIt:function(){
+          alert("我测你的码");
+        },
+        foodchange:function(){
+          this.food += "番茄炒蛋拳！"
+        },
+      }
+    })
+  </script>
+  
+</body>
+</html>
